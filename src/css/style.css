@@ -1,0 +1,274 @@
+header {
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+}
+
+header .logo a {
+    color: var(--color-default);
+    font-size: 3rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+header nav .nav-list {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+header nav li a {
+    display: block;
+    color: var(--color-default);
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 8px 17px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+header nav li a:hover {
+    background-color: var(--color-default);
+    color: var(--color-second);
+}
+
+/************Menu-Hamburguer************/
+
+header .menu {
+    display: none;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+}
+
+header nav label {
+    display: flex;
+    flex-direction: column;
+}
+
+header .hamburguer {
+    background-color: var(--color-default);
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 2px;
+    top: 30px;
+    left: 15px;
+    transition: 0.5s ease-in-out;
+}
+
+header .hamburguer:before,
+header .hamburguer:after {
+    background-color: var(--color-default);
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.2s ease-in-out;
+}
+
+header .hamburguer:before {
+    top: -10px;
+}
+
+header .hamburguer:after {
+    bottom: -10px;
+}
+
+header input {
+    display: none;
+}
+
+header input:checked~label .hamburguer {
+    transform: rotate(45deg);
+}
+
+header input:checked~label .hamburguer:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+header input:checked~label .hamburguer:after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+/************Responsive************/
+
+@media (max-width: 995px) {
+
+    html {
+        font-size: 60%;
+    }
+
+    header .menu {
+        display: block;
+    }
+
+    header .hamburguer {
+        overflow: visible;
+    }
+
+    header nav .nav-list {
+        display: none;
+    }
+
+    header input:checked~.nav-list {
+        display: block;
+    }
+
+    header nav {
+        position: absolute;
+        top: -1px;
+        right: 0;
+        z-index: 10;
+    }
+
+    header nav .nav-list {
+        width: 300px;
+        background-color: var(--color-second);
+        padding: 5px;
+        border-radius: 20px;
+    }
+
+    header nav ul li a {
+        display: block;
+        font-size: 3.5rem;
+        text-align: center;
+        padding: 30px;
+        color: var(--color-default);
+        border-radius: 20px;
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    html {
+        font-size: 45%;
+    }
+}
+
+@media (max-width: 375px) {
+
+    html {
+        font-size: 30%;
+    }
+
+    header {
+        margin-left: -50px;
+    }
+
+    header .logo a {
+        font-size: 4rem;
+    }
+
+    header nav {
+        width: 200px;
+    }
+
+    header nav ul li {
+        display: flex;
+        justify-content: center;
+        width: 190px;
+    }
+
+    header nav ul li a {
+        display: flex;
+    }
+
+}
+
+/************Main************/
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85vh;
+    text-align: center;
+}
+
+.banner .bg-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.banner .text .title-primary,
+.banner .text .title-second {
+    color: var(--color-default);
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.banner .btn {
+    margin-top: 50px;
+}
+
+.banner .btn button {
+    width: 170px;
+    height: 55px;
+    border-radius: 5px;
+    border: 0;
+    margin: 0 10px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+.banner .btn .n-overlay {
+    color: var(--color-default);
+    background: none;
+    border: 2px solid var(--color-default);
+    transition: 0.3s;
+}
+
+.banner .btn .n-overlay:hover {
+    color: var(--color-second);
+    background-color: var(--color-default);
+}
+
+.banner .btn .overlay {
+    background: var(--color-default);
+    color: var(--color-second);
+    animation: vibrate 0.5s ease-in-out infinite both;
+}
+
+@keyframes vibrate {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/************Responsive************/
+@media (max-width: 375px) {
+
+    .banner .btn .n-overlay {
+        margin-bottom: 25px;
+    }
+}
