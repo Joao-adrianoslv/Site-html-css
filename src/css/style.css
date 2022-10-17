@@ -63,8 +63,8 @@ header .hamburguer {
     transition: 0.5s ease-in-out;
 }
 
-header .hamburguer:before,
-header .hamburguer:after {
+header .hamburguer::before,
+header .hamburguer::after {
     background-color: var(--color-default);
     content: "";
     display: block;
@@ -74,11 +74,11 @@ header .hamburguer:after {
     transition: 0.2s ease-in-out;
 }
 
-header .hamburguer:before {
+header .hamburguer::before {
     top: -10px;
 }
 
-header .hamburguer:after {
+header .hamburguer::after {
     bottom: -10px;
 }
 
@@ -90,12 +90,12 @@ header input:checked~label .hamburguer {
     transform: rotate(45deg);
 }
 
-header input:checked~label .hamburguer:before {
+header input:checked~label .hamburguer::before {
     transform: rotate(90deg);
     top: 0;
 }
 
-header input:checked~label .hamburguer:after {
+header input:checked~label .hamburguer::after {
     transform: rotate(90deg);
     bottom: 0;
 }
